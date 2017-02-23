@@ -416,25 +416,24 @@
           var handleDataTableButtons = function() {
               if ($("#datatable-buttons").length) {
                   $("#datatable-buttons").DataTable({
-                      dom: "Bfrtip",
+                      dom: "Brtip",
                       buttons: [
                           {
                               text:"增加",
                               className:"btn btn-default",
                               action: function ( e, dt, node, config ) {
-                                  var hrml=1;
+                                  var html=1;
                                   $.ajax( {
-                                      url:"test.html", //这里是静态页的地址
+                                      url:"authority_add.html", //这里是静态页的地址
                                       type: "GET", //静态页用get方法，否则服务器会抛出405错误
-                                      success: function(data){
+                                      async:false,
+                                  success: function(data){
                                           html=data;
-                                          alert(data);
                                       },
                                       error:function(data){
                                           alert(".....");
                                       }
                                   });
-                                  alert(html);
                                   MyDialog({
                                       title:"增加权限信息",
                                       content: html,
