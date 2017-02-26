@@ -2502,7 +2502,7 @@ if (typeof NProgress != 'undefined') {
 			};
 	   
 		/* DATA TABLES */
-			
+
 			function init_DataTables() {
 				console.log('run_datatables');
 				
@@ -5061,6 +5061,8 @@ if (typeof NProgress != 'undefined') {
 		init_autosize();
 		init_autocomplete();
 				
-	});	
+	});
+
+
 	
 

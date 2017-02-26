@@ -1,143 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Gentelella Alela! | </title>
+  <title>Gentelella Alela! | </title>
 
-    <!-- Bootstrap -->
-    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <!-- NProgress -->
-    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
-    
-    <!-- Custom Theme Style -->
-    <link href="../build/css/custom.min.css" rel="stylesheet">
-  </head>
+  <!-- Bootstrap -->
+  <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
-  <body>
-    <div class="container body">
-      <div class="main_container">
+  <!-- NProgress -->
+  <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+  <!-- Custom Theme Style -->
+  <link href="../build/css/custom.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/zTreeStyle/zTreeStyle.css" type="text/css">
+  <link rel="stylesheet" href="css/zTreeStyle/demo.css" type="text/css">
+
+  <!-- jQuery -->
+  <script src="../vendors/jquery/dist/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- FastClick -->
+  <script src="../vendors/fastclick/lib/fastclick.js"></script>
+  <!-- NProgress -->
+  <script src="../vendors/nprogress/nprogress.js"></script>
+  <!-- validator -->
+  <script src="../vendors/validator/validator.js"></script>
+  <!-- Custom Theme Scripts -->
+  <script src="../build/js/custom.min.js"></script>
+
+  <script type="text/javascript" src="js/tree/jquery-1.4.4.min.js"></script>
+  <script type="text/javascript" src="js/tree/jquery.ztree.core.min.js"></script>
+  <script type="text/javascript" src="js/tree/jquery.ztree.excheck.min.js"></script>
+
+  <script src="js/getUrlParam.js"></script>
+
+  <SCRIPT type="text/javascript">
+
+      <!--
+      var setting = {
+          view: {
+              dblClickExpand: false
+          },
+          data: {
+              simpleData: {
+                  enable: true
+              }
+          },
+          callback: {
+             /* beforeClick: beforeClick,*/
+              onClick: onClick
+          }
+      };
+
+      var zNodes =[
+          {id:0, pId:0, name:"学生电子档案管理系统","target":"add", open:true},
+      ];
+
+
+      function onClick(e, treeId, treeNode) {
+          var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+              nodes = zTree.getSelectedNodes(),
+              v = "";
+          var id=""
+          nodes.sort(function compare(a,b){return a.id-b.id;});
+          for (var i=0, l=nodes.length; i<l; i++) {
+              v += nodes[i].name + ",";
+              id +=nodes[i].id+",";
+          }
+          if (v.length > 0 ) v = v.substring(0, v.length-1);
+          if (id.length > 0 ) id = id.substring(0, id.length-1);
+          var cityObj = $("#citySel");
+          cityObj.attr("value", v);
+          var moduleName=$("#moduleName")
+          moduleName.attr("value",id)
+
+
+      }
+
+      function showMenu() {
+          var cityObj = $("#citySel");
+          var cityOffset = $("#citySel").offset();
+          $("#menuContent").css({left:cityOffset.left + "px", top:cityOffset.top + cityObj.outerHeight() + "px"}).slideDown("fast");
+
+          $("body").bind("mousedown", onBodyDown);
+      }
+      function hideMenu() {
+          $("#menuContent").fadeOut("fast");
+          $("body").unbind("mousedown", onBodyDown);
+      }
+      function onBodyDown(event) {
+          if (!(event.target.id == "menuBtn" || event.target.id == "menuContent" || $(event.target).parents("#menuContent").length>0)) {
+              hideMenu();
+          }
+      }
 
 
 
-        <!-- page content -->
-        <div  role="main">
-          <div class="">
+      $(document).ready(function(){  //异步加载
 
 
-            <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="x_panel">
-                  <div class="x_content">
+          $.ajax({
+              url:"http://127.0.0.1:8080/ElecRecord/system/authority_treeData.action",
+              type:"post",
+              dataType:"json",//返回数据类
+              success: function(data){
+                  if(data!=null){
 
-                    <form class="form-horizontal form-label-left" novalidate>
+
+                      var dataObj=eval(data);//转换为json对象
+
+                      //把数据输入到Znodes
+                      for(var i=0;i<dataObj.length;i++){
+                          var val = {id:dataObj[i].authorityId, pId:dataObj[i].parentId, name:dataObj[i].authorityName, open:true};
+                          if(i>30){
+                              val.open=false;
+                          }
+                          zNodes.push(val);
+                      }
+                  }
+                  //加载树
+                  var t = $("#treeDemo");
+                  t = $.fn.zTree.init(t, setting, zNodes);
+                  var zTree = $.fn.zTree.getZTreeObj("tree");
+                  //zTree.selectNode(zTree.getNodeByParam("id", 101));
+
+              },
+              error:function(){alert("失败！");}
+
+          });
 
 
-                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Name <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="name" placeholder="both name(s) e.g Jon Doe" required="required" type="text">
-                        </div>
-                      </div>
-                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Email <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="email" id="email" name="email" required="required" class="form-control col-md-7 col-xs-12">
-                        </div>
-                      </div>
-                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Confirm Email <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="email" id="email2" name="confirm_email" data-validate-linked="email" required="required" class="form-control col-md-7 col-xs-12">
-                        </div>
-                      </div>
-                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="number">Number <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="number" id="number" name="number" required="required" data-validate-minmax="10,100" class="form-control col-md-7 col-xs-12">
-                        </div>
-                      </div>
-                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="website">Website URL <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="url" id="website" name="website" required="required" placeholder="www.website.com" class="form-control col-md-7 col-xs-12">
-                        </div>
-                      </div>
-                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="occupation">Occupation <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="occupation" type="text" name="occupation" data-validate-length-range="5,20" class="optional form-control col-md-7 col-xs-12">
-                        </div>
-                      </div>
-                      <div class="item form-group">
-                        <label for="password" class="control-label col-md-3 col-sm-3 col-xs-12">Password</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="password" type="password" name="password" data-validate-length="6,8" class="form-control col-md-7 col-xs-12" required="required">
-                        </div>
-                      </div>
-                      <div class="item form-group">
-                        <label for="password2" class="control-label col-md-3 col-sm-3 col-xs-12">Repeat Password</label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input id="password2" type="password" name="password2" data-validate-linked="password" class="form-control col-md-7 col-xs-12" required="required">
-                        </div>
-                      </div>
-                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="telephone">Telephone <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <input type="tel" id="telephone" name="phone" required="required" data-validate-length-range="8,20" class="form-control col-md-7 col-xs-12">
-                        </div>
-                      </div>
-                      <div class="item form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="textarea">Textarea <span class="required">*</span>
-                        </label>
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                          <textarea id="textarea" required="required" name="textarea" class="form-control col-md-7 col-xs-12"></textarea>
-                        </div>
-                      </div>
-                      <div class="ln_solid"></div>
-                      <div class="form-group">
-                        <div class="col-md-6 col-md-offset-3">
-                          <button type="submit" class="btn btn-primary">Cancel</button>
-                          <button id="send" type="submit" class="btn btn-success">Submit</button>
-                        </div>
-                      </div>
-                    </form>
+      });
+      //-->
+
+    function MySubmit(){
+        location.href="authority.html?pageName="+pageName;
+    }
+  </SCRIPT>
+
+</head>
+
+<body>
+<div class="container body">
+  <div class="main_container">
+
+
+
+    <!-- page content -->
+    <div  role="main">
+      <div class="">
+
+
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+              <div class="x_content">
+
+                <form class="form-horizontal form-label-left" novalidate>
+                  <div class="item form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="authorityName">权限名称：
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input id="authorityName" class="form-control col-md-7 col-xs-12" name="authorityName"  required="required" type="text">
+                    </div>
                   </div>
-                </div>
+                  <div class="item form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="citySel">模块名称：
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input id="citySel" class="form-control col-md-7 col-xs-12" name="citySel" readonly="true"  type="text" onclick="showMenu();">
+                    </div>
+                     <div class="col-md-6 col-sm-6 col-xs-12" hidden>
+                      <input id="moduleName" class="form-control col-md-7 col-xs-12" name="moduleName"  type="text" onclick="showMenu();">
+                    </div>
+
+                  </div>
+                  <div class="item form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="url">访问地址：
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input id="url" class="form-control col-md-7 col-xs-12" name="url"  required="required" type="text">
+                    </div>
+                  </div>
+                  <div class="item form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="authorityType">权限类型：
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12" id="authorityType" >
+                      <div class="radio">
+                        <label>
+                          <input type="radio" class="flat" checked name="authorityType"> 菜单
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" class="flat" name="authorityType"> 功能
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="operation">操作名称：
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input id="operation" class="form-control col-md-7 col-xs-12" name="operation"  required="required" type="text">
+                    </div>
+                  </div>
+                  <div class="item form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="menuNO">菜单排号：
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input id="menuNO" class="form-control col-md-7 col-xs-12" name="menuNO"  required="required" type="text">
+                    </div>
+                  </div>
+                  <div class="item form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="meno">备注：
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input id="meno" class="form-control col-md-7 col-xs-12" name="meno"  required="required" type="text">
+                    </div>
+                  </div>
+
+
+                  <div class="ln_solid"></div>
+                  <div class="form-group">
+                    <div class="col-md-6 col-md-offset-5">
+                      <button id="send" type="button" class="btn btn-success" onclick="MySubmit();">Submit</button>
+                    </div>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
         </div>
-        <!-- /page content -->
       </div>
     </div>
+    <!-- /page content -->
+  </div>
+</div>
 
-    <!-- jQuery -->
-    <script src="../vendors/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- FastClick -->
-    <script src="../vendors/fastclick/lib/fastclick.js"></script>
-    <!-- NProgress -->
-    <script src="../vendors/nprogress/nprogress.js"></script>
-    <!-- validator -->
-    <script src="../vendors/validator/validator.js"></script>
 
-    <!-- Custom Theme Scripts -->
-    <script src="../build/js/custom.min.js"></script>
-	
-  </body>
+<div id="menuContent" class="menuContent" style="display:none; ">
+  <ul id="treeDemo" class="ztree" style="margin-top:0; width:400px;"></ul>
+</div>
+
+
+
+
+
+
+</body>
 </html>

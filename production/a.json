@@ -1,0 +1,582 @@
+[
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d1ac4af000b",
+    "authorityName": "用户管理",
+    "parentId": "8a8fa1e0556cc0a301556d1624b80009"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d1fbc500016",
+    "authorityName": "基本信息管理",
+    "parentId": "0"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d20d4650017",
+    "authorityName": "学生基本信息",
+    "parentId": "8a8fa1e0556cc0a301556d1fbc500016"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d258b6d001f",
+    "authorityName": "教师开课信息",
+    "parentId": "8a8fa1e0556cc0a301556d228b340019"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d26ca0c0021",
+    "authorityName": "国家助学金",
+    "parentId": "8a8fa1e0556cc0a301556d2319a7001a"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d28267b0024",
+    "authorityName": "辅导记录维护",
+    "parentId": "8a8fa1e0556cc0a301556d2384de001b"
+  },
+  {
+    "authorityId": "8a8fa1e65576b691015576c5e27a00d7",
+    "authorityName": "导入档案邮寄信息",
+    "parentId": "8a8fa1e0556cc0a301556d2ab18f002b"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d28e02e0026",
+    "authorityName": "考勤课程维护",
+    "parentId": "8a8fa1e0556cc0a301556d2384de001b"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d2929c00027",
+    "authorityName": "学科竞赛维护",
+    "parentId": "8a8fa1e0556cc0a301556d2384de001b"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d29b2f80028",
+    "authorityName": "培训信息",
+    "parentId": "8a8fa1e0556cc0a301556d23e1a5001c"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d2a6b04002a",
+    "authorityName": "学籍异动信息",
+    "parentId": "8a8fa1e0556cc0a301556d244fa0001d"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d2b2c0c002c",
+    "authorityName": "党团关系管理",
+    "parentId": "8a8fa1e0556cc0a301556d24ff65001e"
+  },
+  {
+    "authorityId": "8a8fa1e0556d9c8901556da0d9250001",
+    "authorityName": "增加用户",
+    "parentId": "8a8fa1e0556cc0a301556d1ac4af000b"
+  },
+  {
+    "authorityId": "8a8fa1e0556dbcc901556dcb8b360050",
+    "authorityName": "增加学生信息",
+    "parentId": "8a8fa1e0556cc0a301556d20d4650017"
+  },
+  {
+    "authorityId": "8a8fa1e0556dbcc901556de06e1f0054",
+    "authorityName": "增加教师信息",
+    "parentId": "8a8fa1e0556cc0a301556d21c38f0018"
+  },
+  {
+    "authorityId": "8a8fa1e0556dbcc901556dfaea27005a",
+    "authorityName": "增加开课信息",
+    "parentId": "8a8fa1e0556cc0a301556d258b6d001f"
+  },
+  {
+    "authorityId": "8a8fa1e0556dbcc901556dff0d6e005e",
+    "authorityName": "删除选课信息",
+    "parentId": "8a8fa1e0556cc0a301556d263f200020"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c2015573a8a81200c7",
+    "authorityName": "增加助学金信息",
+    "parentId": "8a8fa1e0556cc0a301556d26ca0c0021"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c2015573ac882c00cb",
+    "authorityName": "增加国家奖学金信息",
+    "parentId": "8a8fa1e0556cc0a301556d276a0f0022"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c2015573af8c3000cf",
+    "authorityName": "增加贷款信息",
+    "parentId": "8a8fa1e0556cc0a301556d27a5520023"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c2015573b2602d00d3",
+    "authorityName": "增加普通奖学金信息",
+    "parentId": "8a8fa1d0557372c20155737583f40002"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c2015573b54c1600d7",
+    "authorityName": "增加培训信息",
+    "parentId": "8a8fa1e0556cc0a301556d29b2f80028"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c2015573b7b43400db",
+    "authorityName": "增加培训结果信息",
+    "parentId": "8a8fa1e0556cc0a301556d29fc210029"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c2015573ba2fac00df",
+    "authorityName": "增加党团信息",
+    "parentId": "8a8fa1e0556cc0a301556d2b2c0c002c"
+  },
+  {
+    "authorityId": "8a8fa1e65576b691015576c19d6b00d4",
+    "authorityName": "增加档案邮寄信息",
+    "parentId": "8a8fa1e0556cc0a301556d2ab18f002b"
+  },
+  {
+    "authorityId": "8a8fa1e65576b691015576c2746e00d5",
+    "authorityName": "删除档案邮寄信息",
+    "parentId": "8a8fa1e0556cc0a301556d2ab18f002b"
+  },
+  {
+    "authorityId": "8a8fa1e65576b691015576c3345600d6",
+    "authorityName": "修改档案邮寄信息",
+    "parentId": "8a8fa1e0556cc0a301556d2ab18f002b"
+  },
+  {
+    "authorityId": "8a8fa1e65576b691015576c82caa0121",
+    "authorityName": "增加学生职务信息",
+    "parentId": "8a8fa1e0556cc0a301556d2b6ee0002d"
+  },
+  {
+    "authorityId": "8a8fa1df5576bfa3015576cb4a590091",
+    "authorityName": "导学内容维护",
+    "parentId": "8a8fa1e0556cc0a301556d2384de001b"
+  },
+  {
+    "authorityId": "8a8fa1e65576b691015576cad843016c",
+    "authorityName": "删除学生职务信息",
+    "parentId": "8a8fa1e0556cc0a301556d2b6ee0002d"
+  },
+  {
+    "authorityId": "8a8fa1e65576b691015576cb59ad016d",
+    "authorityName": "修改学生职务信息",
+    "parentId": "8a8fa1e0556cc0a301556d2b6ee0002d"
+  },
+  {
+    "authorityId": "8a8fa1e65576b691015576cbfb85016e",
+    "authorityName": "导入学生职务信息",
+    "parentId": "8a8fa1e0556cc0a301556d2b6ee0002d"
+  },
+  {
+    "authorityId": "8a8fa1e65576b691015576cef0b201bd",
+    "authorityName": "增加学科竞赛维护信息",
+    "parentId": "8a8fa1e0556cc0a301556d2929c00027"
+  },
+  {
+    "authorityId": "8a8fa1e65576b691015576cf970d01be",
+    "authorityName": "删除学科竞赛维护信息",
+    "parentId": "8a8fa1e0556cc0a301556d2929c00027"
+  },
+  {
+    "authorityId": "8a8fa1e65576b691015576d0fd4501bf",
+    "authorityName": "修改学科竞赛维护信息",
+    "parentId": "8a8fa1e0556cc0a301556d2929c00027"
+  },
+  {
+    "authorityId": "8a8fa1e65576b691015576d1c83a01c0",
+    "authorityName": "导入学科竞赛维护信息",
+    "parentId": "8a8fa1e0556cc0a301556d2929c00027"
+  },
+  {
+    "authorityId": "8a8fa1df5576bfa3015576eba4e103ce",
+    "authorityName": "导学名单维护",
+    "parentId": "8a8fa1e0556cc0a301556d2384de001b"
+  },
+  {
+    "authorityId": "8a8fa1df5577027201557739174501ce",
+    "authorityName": "考勤信息维护",
+    "parentId": "8a8fa1e0556cc0a301556d2384de001b"
+  },
+  {
+    "authorityId": "8a8fa1e0557b0ed101557b10d4620001",
+    "authorityName": "增加信息",
+    "parentId": "8a8fa1e0556cc0a301556d263f200020"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d1c4b38000c",
+    "authorityName": "角色管理",
+    "parentId": "8a8fa1e0556cc0a301556d1624b80009"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d21c38f0018",
+    "authorityName": "教师基本信息",
+    "parentId": "8a8fa1e0556cc0a301556d1fbc500016"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d228b340019",
+    "authorityName": "学生学习情况",
+    "parentId": "0"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d263f200020",
+    "authorityName": "学生选课成绩",
+    "parentId": "8a8fa1e0556cc0a301556d228b340019"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d276a0f0022",
+    "authorityName": "国家奖学金",
+    "parentId": "8a8fa1e0556cc0a301556d2319a7001a"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d29fc210029",
+    "authorityName": "培训结果",
+    "parentId": "8a8fa1e0556cc0a301556d23e1a5001c"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d2ab18f002b",
+    "authorityName": "档案邮寄信息",
+    "parentId": "8a8fa1e0556cc0a301556d244fa0001d"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d2b6ee0002d",
+    "authorityName": "学生职务信息",
+    "parentId": "8a8fa1e0556cc0a301556d24ff65001e"
+  },
+  {
+    "authorityId": "8a8fa1e0556db3a401556dbb1b880000",
+    "authorityName": "修改用户",
+    "parentId": "8a8fa1e0556cc0a301556d1ac4af000b"
+  },
+  {
+    "authorityId": "8a8fa1e0556dbcc901556dcc2fc40051",
+    "authorityName": "删除学生信息",
+    "parentId": "8a8fa1e0556cc0a301556d20d4650017"
+  },
+  {
+    "authorityId": "8a8fa1e0556dbcc901556de0fd3f0055",
+    "authorityName": "修改教师信息",
+    "parentId": "8a8fa1e0556cc0a301556d21c38f0018"
+  },
+  {
+    "authorityId": "8a8fa1e0556dbcc901556dfbdb7e005b",
+    "authorityName": "修改开课信息",
+    "parentId": "8a8fa1e0556cc0a301556d258b6d001f"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c2015573a9a58f00c8",
+    "authorityName": "删除助学金信息",
+    "parentId": "8a8fa1e0556cc0a301556d26ca0c0021"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c2015573ad5ac600cc",
+    "authorityName": "删除国家奖学金信息",
+    "parentId": "8a8fa1e0556cc0a301556d276a0f0022"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c2015573b04a6500d0",
+    "authorityName": "删除贷款信息",
+    "parentId": "8a8fa1e0556cc0a301556d27a5520023"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c2015573b3129d00d4",
+    "authorityName": "删除普通奖学金信息",
+    "parentId": "8a8fa1d0557372c20155737583f40002"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c2015573b5d6e100d8",
+    "authorityName": "删除培训信息",
+    "parentId": "8a8fa1e0556cc0a301556d29b2f80028"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c2015573b835d400dc",
+    "authorityName": "删除培训结果信息",
+    "parentId": "8a8fa1e0556cc0a301556d29fc210029"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c2015573baa9bb00e0",
+    "authorityName": "删除党团信息",
+    "parentId": "8a8fa1e0556cc0a301556d2b2c0c002c"
+  },
+  {
+    "authorityId": "8a8fa1df5575e662015575f0dba10001",
+    "authorityName": "添加辅导记录",
+    "parentId": "8a8fa1e0556cc0a301556d28267b0024"
+  },
+  {
+    "authorityId": "8a8fa1df5576bfa3015576cc44910092",
+    "authorityName": "添加导学内容",
+    "parentId": "8a8fa1df5576bfa3015576cb4a590091"
+  },
+  {
+    "authorityId": "8a8fa1df5576bfa3015576ec519703cf",
+    "authorityName": "添加导学名单信息",
+    "parentId": "8a8fa1df5576bfa3015576eba4e103ce"
+  },
+  {
+    "authorityId": "8a8fa1df5577027201557718f0cd005d",
+    "authorityName": "增加学籍异动信息",
+    "parentId": "8a8fa1e0556cc0a301556d2a6b04002a"
+  },
+  {
+    "authorityId": "8a8fa1df557702720155773671e901cb",
+    "authorityName": "增加考勤课程信息",
+    "parentId": "8a8fa1e0556cc0a301556d28e02e0026"
+  },
+  {
+    "authorityId": "8a8fa1df5577027201557739bb2401cf",
+    "authorityName": "增加考勤信息",
+    "parentId": "8a8fa1df5577027201557739174501ce"
+  },
+  {
+    "authorityId": "8a8fa1e0557b0ed101557b115f720002",
+    "authorityName": "修改信息",
+    "parentId": "8a8fa1e0556cc0a301556d263f200020"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d1ce617000d",
+    "authorityName": "权限管理",
+    "parentId": "8a8fa1e0556cc0a301556d1624b80009"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d2319a7001a",
+    "authorityName": "奖助贷信息",
+    "parentId": "0"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d27a5520023",
+    "authorityName": "贷款信息",
+    "parentId": "8a8fa1e0556cc0a301556d2319a7001a"
+  },
+  {
+    "authorityId": "8a8fa1e0556dbcc901556dccd4b00052",
+    "authorityName": "修改学生信息",
+    "parentId": "8a8fa1e0556cc0a301556d20d4650017"
+  },
+  {
+    "authorityId": "8a8fa1e0556dbcc901556de19d3d0056",
+    "authorityName": "删除教师信息",
+    "parentId": "8a8fa1e0556cc0a301556d21c38f0018"
+  },
+  {
+    "authorityId": "8a8fa1e0556dbcc901556dfc95ad005c",
+    "authorityName": "删除开课信息",
+    "parentId": "8a8fa1e0556cc0a301556d258b6d001f"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c20155737583f40002",
+    "authorityName": "普通奖学金",
+    "parentId": "8a8fa1e0556cc0a301556d2319a7001a"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c2015573aa908200c9",
+    "authorityName": "修改助学金信息",
+    "parentId": "8a8fa1e0556cc0a301556d26ca0c0021"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c2015573ae13db00cd",
+    "authorityName": "修改国家奖学金信息",
+    "parentId": "8a8fa1e0556cc0a301556d276a0f0022"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c2015573b0ddff00d1",
+    "authorityName": "修改贷款信息",
+    "parentId": "8a8fa1e0556cc0a301556d27a5520023"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c2015573b3bdff00d5",
+    "authorityName": "修改普通奖学金信息",
+    "parentId": "8a8fa1d0557372c20155737583f40002"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c2015573b659d100d9",
+    "authorityName": "修改培训信息",
+    "parentId": "8a8fa1e0556cc0a301556d29b2f80028"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c2015573b8c05600dd",
+    "authorityName": "修改培训结果信息",
+    "parentId": "8a8fa1e0556cc0a301556d29fc210029"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c2015573bb3a2d00e1",
+    "authorityName": "修改党团信息",
+    "parentId": "8a8fa1e0556cc0a301556d2b2c0c002c"
+  },
+  {
+    "authorityId": "8a8fa1df5575e662015575f7a4ce008e",
+    "authorityName": "删除辅导记录",
+    "parentId": "8a8fa1e0556cc0a301556d28267b0024"
+  },
+  {
+    "authorityId": "8a8fa1df5576bfa3015576cda8b40093",
+    "authorityName": "删除导学内容",
+    "parentId": "8a8fa1df5576bfa3015576cb4a590091"
+  },
+  {
+    "authorityId": "8a8fa1df5576bfa3015576ed108c03d0",
+    "authorityName": "删除导学名单信息",
+    "parentId": "8a8fa1df5576bfa3015576eba4e103ce"
+  },
+  {
+    "authorityId": "8a8fa1df557702720155772d833301c8",
+    "authorityName": "删除学籍异动信息",
+    "parentId": "8a8fa1e0556cc0a301556d2a6b04002a"
+  },
+  {
+    "authorityId": "8a8fa1df557702720155773707cf01cc",
+    "authorityName": "删除考勤课程信息",
+    "parentId": "8a8fa1e0556cc0a301556d28e02e0026"
+  },
+  {
+    "authorityId": "8a8fa1df557702720155773b2f9001d0",
+    "authorityName": "删除考勤信息",
+    "parentId": "8a8fa1df5577027201557739174501ce"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d1dc6bc000e",
+    "authorityName": "部门信息",
+    "parentId": "8a8fa1e0556cc0a301556d1624b80009"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d2384de001b",
+    "authorityName": "辅导培训信息",
+    "parentId": "0"
+  },
+  {
+    "authorityId": "8a8fa1e0556dbcc901556ddfeb020053",
+    "authorityName": "导入信息",
+    "parentId": "8a8fa1e0556cc0a301556d20d4650017"
+  },
+  {
+    "authorityId": "8a8fa1e0556dbcc901556df8e6bd0058",
+    "authorityName": "导入信息",
+    "parentId": "8a8fa1e0556cc0a301556d21c38f0018"
+  },
+  {
+    "authorityId": "8a8fa1e0556dbcc901556dfe0257005d",
+    "authorityName": "导入开课信息",
+    "parentId": "8a8fa1e0556cc0a301556d258b6d001f"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c2015573ab777f00ca",
+    "authorityName": "导入助学金信息",
+    "parentId": "8a8fa1e0556cc0a301556d26ca0c0021"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c2015573aed31d00ce",
+    "authorityName": "导入国家奖学金信息",
+    "parentId": "8a8fa1e0556cc0a301556d276a0f0022"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c2015573b18b0500d2",
+    "authorityName": "导入贷款信息",
+    "parentId": "8a8fa1e0556cc0a301556d27a5520023"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c2015573b495d100d6",
+    "authorityName": "导入普通奖学金信息",
+    "parentId": "8a8fa1d0557372c20155737583f40002"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c2015573b7050700da",
+    "authorityName": "导入培训信息",
+    "parentId": "8a8fa1e0556cc0a301556d29b2f80028"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c2015573b9783800de",
+    "authorityName": "导入培训结果信息 ",
+    "parentId": "8a8fa1e0556cc0a301556d29fc210029"
+  },
+  {
+    "authorityId": "8a8fa1d0557372c2015573bbe71000e2",
+    "authorityName": "导入党团信息",
+    "parentId": "8a8fa1e0556cc0a301556d2b2c0c002c"
+  },
+  {
+    "authorityId": "8a8fa1df5575e662015575fa792b015f",
+    "authorityName": "导入辅导记录信息",
+    "parentId": "8a8fa1e0556cc0a301556d28267b0024"
+  },
+  {
+    "authorityId": "8a8fa1df5576bfa3015576ce5bcb0094",
+    "authorityName": "修改导学内容",
+    "parentId": "8a8fa1df5576bfa3015576cb4a590091"
+  },
+  {
+    "authorityId": "8a8fa1df5577027201557704d3550000",
+    "authorityName": "修改导学名单",
+    "parentId": "8a8fa1df5576bfa3015576eba4e103ce"
+  },
+  {
+    "authorityId": "8a8fa1df557702720155772e61c301c9",
+    "authorityName": "修改学籍异动信息",
+    "parentId": "8a8fa1e0556cc0a301556d2a6b04002a"
+  },
+  {
+    "authorityId": "8a8fa1df55770272015577379ab701cd",
+    "authorityName": "修改考勤课程信息",
+    "parentId": "8a8fa1e0556cc0a301556d28e02e0026"
+  },
+  {
+    "authorityId": "8a8fa1df557702720155773bdec801d1",
+    "authorityName": "修改考勤信息",
+    "parentId": "8a8fa1df5577027201557739174501ce"
+  },
+  {
+    "authorityId": "8a8fa1e0557b0ed101557b121a1a0003",
+    "authorityName": "导入信息",
+    "parentId": "8a8fa1e0556cc0a301556d263f200020"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d1e58aa000f",
+    "authorityName": "数据字典",
+    "parentId": "8a8fa1e0556cc0a301556d1624b80009"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d23e1a5001c",
+    "authorityName": "学生干部信息",
+    "parentId": "0"
+  },
+  {
+    "authorityId": "8a8fa1df5575e662015576018b040232",
+    "authorityName": "修改辅导记录",
+    "parentId": "8a8fa1e0556cc0a301556d28267b0024"
+  },
+  {
+    "authorityId": "8a8fa1df5576bfa3015576d0422a0095",
+    "authorityName": "导入导学内容",
+    "parentId": "8a8fa1df5576bfa3015576cb4a590091"
+  },
+  {
+    "authorityId": "8a8fa1df557702720155772fa5ae01ca",
+    "authorityName": "导入学籍异动信息",
+    "parentId": "8a8fa1e0556cc0a301556d2a6b04002a"
+  },
+  {
+    "authorityId": "8a8fa1df557702720155773d286a01d2",
+    "authorityName": "导入考勤信息",
+    "parentId": "8a8fa1df5577027201557739174501ce"
+  },
+  {
+    "authorityId": "8a8fa1df55770272015577607bd502a9",
+    "authorityName": "导入导学名单",
+    "parentId": "8a8fa1df5576bfa3015576eba4e103ce"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d244fa0001d",
+    "authorityName": "档案信息管理",
+    "parentId": "0"
+  },
+  {
+    "authorityId": "8a8fa1e0556e60f601556e6436420001",
+    "authorityName": "登录日志",
+    "parentId": "8a8fa1e0556cc0a301556d1624b80009"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d24ff65001e",
+    "authorityName": "身份信息管理",
+    "parentId": "0"
+  },
+  {
+    "authorityId": "8a8fa1e0557a95b601557a9a176b0000",
+    "authorityName": "模板管理",
+    "parentId": "8a8fa1e0556cc0a301556d1624b80009"
+  },
+  {
+    "authorityId": "8a8fa1e0556cc0a301556d1624b80009",
+    "authorityName": "系统管理",
+    "parentId": "0"
+  }
+]

@@ -365,7 +365,18 @@
           </div>
         </div>
         <!-- /page content -->
-
+        <!-- 模态框（Modal） -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">模态框（Modal）标题</h4>
+              </div>
+              <div class="modal-body">在这里添加一些文本</div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal -->
+        </div>
         <!-- footer content -->
         <footer>
           <div class="pull-right">
@@ -403,59 +414,124 @@
     <script src="../vendors/jszip/dist/jszip.min.js"></script>
     <script src="../vendors/pdfmake/build/pdfmake.min.js"></script>
     <script src="../vendors/pdfmake/build/vfs_fonts.js"></script>
+    <script src="js/MyDialog.js"></script>
 
 
 
     <!-- Custom Theme Scripts -->
     <script src="../build/js/custom.min.js"></script>
+    <script src="js/getUrlParam.js"></script>
     <script>
-      /* DATA TABLES */
 
+
+        $('#myModal').on('hidden.bs.modal', function () {
+            window.location.reload();
+
+           $(".modal-body").text("")
+        })
+
+
+
+      var table=$("#datatable-buttons").DataTable({
+            dom: "Brtip",
+            buttons: [
+                {
+                    text:"增加",
+                    className:"btn btn-default",
+                    action: function ( e, dt, node, config ) {
+                        $.ajax( {
+                            url:"authority_add.html?pageName="+pageName, //这里是静态页的地址
+                            type: "GET", //静态页用get方法，否则服务器会抛出405错误
+                            async:false,
+                            success: function(data){
+                                $('#myModal').on('show.bs.modal', function () {
+                                    $.ajax( {
+                                        url:"http://127.0.0.1:8080/gentelella-master/production/authority_add.html", //这里是静态页的地址
+                                        type: "GET", //静态页用get方法，否则服务器会抛出405错误
+                                        async:false,
+                                        success: function(data){
+                                            $(".modal-body").text("");
+                                            $(".modal-body").html(data);
+                                        },
+                                        error:function(data){
+                                            alert("打开失败！");
+                                        }
+                                    });
+                                    // 执行一些动作...
+                                })
+                                $("#myModal").modal("show");
+                            },
+                            error:function(data){
+                                alert("打开失败！");
+                            }
+                        });
+
+
+                    }
+                },
+                {
+                    text:"修改",
+                    className:"btn btn-default",
+                    action: function ( e, dt, node, config ) {
+
+                        $('#myModal').on('show.bs.modal', function () {
+                            $.ajax( {
+                                url:"http://127.0.0.1:8080/gentelella-master/production/authority_add.html", //这里是静态页的地址
+                                type: "GET", //静态页用get方法，否则服务器会抛出405错误
+                                async:false,
+                                success: function(data){
+                                    $(".modal-body").text("");
+                                    $(".modal-body").html(data);
+                                },
+                                error:function(data){
+                                    alert("打开失败！");
+                                }
+                            });
+                            // 执行一些动作...
+                        })
+                        $("#myModal").modal("show");
+
+                    }
+                },
+                {
+                    text:"全选",
+                    className:"btn btn-default",
+                    action:function( e, dt, node, config ){
+
+                    }
+                },
+
+
+            ],
+            "ajax": {
+                "url": "http://127.0.0.1:8080/ElecRecord/system/authority_treeData.action",
+                type:"post",
+                dataType:"json",//返回数据类
+                "dataSrc": function(data){
+
+                    return data;
+
+                }
+            },
+            columns: [
+                { data: 'authorityId' },
+                { data: 'authorityId' },
+                { data: 'authorityId' },
+                { data: 'authorityId' },
+                { data: 'authorityId' },
+
+            ],
+            language: {
+                url: 'Chinese.json'
+            },
+            responsive: true
+        });
+      /* DATA TABLES */
       function init_DataTables() {
 
           var handleDataTableButtons = function() {
               if ($("#datatable-buttons").length) {
-                  $("#datatable-buttons").DataTable({
-                      dom: "Brtip",
-                      buttons: [
-                          {
-                              text:"增加",
-                              className:"btn btn-default",
-                              action: function ( e, dt, node, config ) {
-                                  var html=1;
-                                  $.ajax( {
-                                      url:"authority_add.html", //这里是静态页的地址
-                                      type: "GET", //静态页用get方法，否则服务器会抛出405错误
-                                      async:false,
-                                  success: function(data){
-                                          html=data;
-                                      },
-                                      error:function(data){
-                                          alert(".....");
-                                      }
-                                  });
-                                  MyDialog({
-                                      title:"增加权限信息",
-                                      content: html,
-                                      onOK: function() {
-                                          alert("delete");
-                                      }
-                                  });
 
-                              }
-                          },
-                          {
-                              text:"修改",
-                              className:"btn btn-default",
-                              action: function ( e, dt, node, config ) {
-                                  alert( 'Activated!' );
-
-                              }
-                          },
-
-                      ],
-                      responsive: true
-                  });
               }
           };
 
@@ -472,36 +548,11 @@
 
       };
 
+        table.page.len(15);
 
 
 
-      function MyDialog(options) {
-          var tpl = [
-              '<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">',
-              '  <div class="modal-dialog">',
-              '    <div class="modal-content">',
-              '      <div class="modal-header">',
-              '        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>',
-              '        <h4 class="modal-title" id="myModalLabel">'
-              + (options.title || '提示') + '</h4>',
-              '      </div>',
-              '      <div class="modal-body">',
-              '        <p>' + options.content + '</p>',
-              '      </div>',
-              '      <div class="modal-footer">',
-              '        <button type="button" class="btn btn-default" data-dismiss="modal">'
-              + (options.closeBtnText || '关闭') + '</button>',
-              '        <button type="button" class="btn btn-primary js-mydialog-ok">'
-              + (options.okBtnText || '确认') + '</button>',
-              '      </div>', '    </div>', '  </div>', '</div>' ].join("");
-          var $tpl = $(tpl);
-          $("body").append($tpl)
-          $tpl.modal('toggle');
-          $tpl.on("click", ".js-mydialog-ok", function() {
-              $tpl.modal('hide');
-              $.isFunction(options.onOK) && options.onOK();
-          });
-      }
+
 
     </script>
 
